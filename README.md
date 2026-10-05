@@ -1,25 +1,30 @@
 # RSA Cryptography Lab
 
-An interactive RSA encryption/decryption application built as a portfolio project.
+An interactive RSA encryption and decryption application built with Python and Flask.
 
-## What it demonstrates
-- RSA key generation
+## Overview
+
+RSA is a public-key cryptosystem based on number theory. This project makes the underlying algorithms visible through an interactive web application.
+
+Users can generate an RSA key pair, encrypt a numeric message, decrypt the resulting ciphertext, and inspect the modular exponentiation steps used during the calculation.
+
+## Features
+
+- RSA key generation from two prime numbers
 - Prime-number validation
+- Euler's totient function
 - Greatest common divisor and modular inverse
-- Modular exponentiation
-- Encryption and decryption
-- Step-by-step visualization of the RSA process
-- A clean web interface with a Python backend
+- RSA encryption and decryption
+- Repeated-squaring modular exponentiation
+- Step-by-step calculation display
+- Input validation
+- Python Flask backend
+- Interactive browser interface
 
-## Run locally
+## How RSA Works
 
-```bash
-pip install -r requirements.txt
-python app.py
-```
+For two primes `p` and `q`:
 
-Then open http://127.0.0.1:5000
-
-## Portfolio note
-
-This is an upgraded, standalone version of an RSA concept I have worked with in Python. The application was rebuilt as an interactive web project to make the algorithms easier to explore and demonstrate.
+```text
+n = p × q
+φ(n) = (p - 1)(q - 1)
