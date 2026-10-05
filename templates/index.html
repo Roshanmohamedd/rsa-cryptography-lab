@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSA Cryptography Lab</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">RSA<span>Lab</span></div>
+      <div class="tag">Interactive cryptography</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">CRYPTOGRAPHY • PYTHON • WEB</p>
+        <h1>See RSA<br><em>actually work.</em></h1>
+        <p class="intro">
+          Generate a key pair, encrypt a message, and walk through the
+          modular exponentiation behind the result.
+        </p>
+      </div>
+      <div class="hero-card">
+        <div class="formula">c = m<sup>e</sup> mod n</div>
+        <div class="formula">m = c<sup>d</sup> mod n</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">01 / KEY GENERATION</p>
+          <h2>Create an RSA key pair</h2>
+        </div>
+        <p class="muted">Use small primes to make the mathematics easy to inspect.</p>
+      </div>
+
+      <div class="inputs">
+        <label>Prime p
+          <input id="p" type="number" value="61">
+        </label>
+        <label>Prime q
+          <input id="q" type="number" value="53">
+        </label>
+        <button id="generate">Generate keys</button>
+      </div>
+
+      <div id="keyResult" class="result-grid hidden"></div>
+      <div id="keyError" class="error"></div>
+    </section>
+
+    <section class="two-col">
+      <div class="panel">
+        <p class="eyebrow">02 / ENCRYPT</p>
+        <h2>Turn a message into ciphertext</h2>
+        <p class="muted">Enter an integer m where 0 ≤ m &lt; n.</p>
+        <div class="inline">
+          <input id="message" type="number" value="42">
+          <button id="encrypt">Encrypt</button>
+        </div>
+        <div id="encryptResult"></div>
+      </div>
+
+      <div class="panel">
+        <p class="eyebrow">03 / DECRYPT</p>
+        <h2>Recover the original message</h2>
+        <p class="muted">Use the private exponent d generated above.</p>
+        <div class="inline">
+          <input id="ciphertext" type="number" placeholder="Ciphertext">
+          <button id="decrypt">Decrypt</button>
+        </div>
+        <div id="decryptResult"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">04 / HOW IT WORKS</p>
+          <h2>Modular exponentiation</h2>
+        </div>
+        <p class="muted">The backend uses repeated squaring instead of calculating a huge power directly.</p>
+      </div>
+      <div id="steps" class="steps">
+        <div class="empty">Run an encryption or decryption to see the calculation steps.</div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div>
+        <p class="eyebrow">PROJECT NOTES</p>
+        <h2>Why this project?</h2>
+      </div>
+      <p>
+        RSA connects programming with number theory. This application makes
+        the underlying algorithms visible instead of treating encryption as a
+        black box. It combines algorithmic reasoning, input validation,
+        a Python API, and a browser interface in one small system.
+      </p>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
